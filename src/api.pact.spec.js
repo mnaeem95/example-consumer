@@ -73,7 +73,7 @@ describe('API Pact test', () => {
         const api = new API(mockProvider.mockService.baseUrl);
 
         // make request to Pact mock server
-        await expect(api.getProduct('11')).rejects.toThrow('Request failed with status code 404');
+        await expect(api.getProduct('11')).rejects.toThrow('Request failed with status code 405');
     });
   });
 });
