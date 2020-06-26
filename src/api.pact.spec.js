@@ -66,7 +66,7 @@ describe('API Pact test', () => {
             }
           },
           willRespondWith: {
-            status: 404
+            status: 405
           },
         });
 
