@@ -1,7 +1,7 @@
 import path from 'path';
 import { Pact } from '@pact-foundation/pact';
 import { API } from './api';
-import { eachLike, like } from '@pact-foundation/pact/dsl/matchers';
+import {  like } from '@pact-foundation/pact/dsl/matchers';
 
 const mockProvider = new Pact({
   consumer: 'pactflow-example-consumer',
@@ -22,7 +22,7 @@ describe('API Pact test', () => {
   describe('retrieving a product', () => {
     test('ID 10 exists', async () => {
       // set up Pact interactions
-      const expectedProduct = { id: '10', type: 'CREDIT_CARD', name: '28 Degrees' }
+      const expectedProduct = { id: '10', type: 'CREDIT_CARD', name: '28 Degrees', color: "red" }
 
       await mockProvider.addInteraction({
         state: 'a product with ID 10 exists',
